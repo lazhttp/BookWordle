@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookWordle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="game-container">
+
+  <!-- ── Header / HUD ────────────────────────────────────────────────── -->
+  <header id="game-header">
+    <div id="player-hud">
+      <span class="hud-label">YOU</span>
+      <div class="hp-bar-wrap">
+        <div id="player-hp-bar"><div id="player-hp-fill" class="hp-fill player-fill" style="width:100%"></div></div>
+      </div>
+      <span id="player-hp-text">100/100</span>
+    </div>
+
+    <h1 id="game-title">BOOK<span>WORDLE</span></h1>
+
+    <div id="enemy-hud">
+      <span class="hud-label">ENEMY</span>
+      <div class="hp-bar-wrap">
+        <div id="enemy-hp-bar"><div id="enemy-hp-fill" class="hp-fill" style="width:100%"></div></div>
+      </div>
+      <span id="enemy-hp-text">100/100</span>
+    </div>
+  </header>
+
+  <!-- ── Battle Arena ─────────────────────────────────────────────────── -->
+  <div id="battle-arena">
+
+    <!-- Enemy + log -->
+    <div id="enemy-section">
+      <div class="enemy-sprite" id="enemy-sprite" data-sprite="0"></div>
+      <div id="enemy-name">⟨ LEXIVORE ⟩  LV.1</div>
+      <div id="battle-log"></div>
+    </div>
+
+    <!-- Wordle attack history -->
+    <div id="wordle-section">
+      <div id="wordle-history"></div>
+    </div>
+
+  </div>
+
+  <!-- ── Word Display Bar ──────────────────────────────────────────────── -->
+  <div id="word-display">
+    <div id="selected-word">— SELECT LETTERS —</div>
+    <div id="word-controls">
+      <button id="submit-btn" disabled>ATTACK!</button>
+      <button id="clear-btn">CLEAR</button>
+    </div>
+  </div>
+
+  <!-- ── Letter Grid ──────────────────────────────────────────────────── -->
+  <div id="grid-section">
+    <div id="letter-grid"></div>
+  </div>
+
+</div><!-- #game-container -->
+
+<!-- ── Overlay (game over / enemy change) ──────────────────────────── -->
+<div id="game-overlay">
+  <div class="overlay-box">
+    <div id="overlay-title">GAME OVER</div>
+    <div id="overlay-msg">You were defeated.</div>
+    <button id="overlay-btn">▶ PLAY AGAIN</button>
+  </div>
+</div>
+
+<!-- ── Scripts ───────────────────────────────────────────────────────── -->
+<script src="js/words.js"></script>
+<script src="js/board.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
